@@ -31,5 +31,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker tag react-openshift-example:latest ${{ secrets.DOCKER_USERNAME }}/react-openshift-example:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/react-openshift-example:latest
+          docker tag react-openshift-example:latest ${{ secrets.DOCKER_USERNAME }}/react-openshift-example:0.0.1
+          docker push ${{ secrets.DOCKER_USERNAME }}/react-openshift-example:0.0.1
