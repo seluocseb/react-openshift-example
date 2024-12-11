@@ -16,6 +16,8 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 3000
 
+RUN chown -R node /app/build
+
 USER node:0
 
 # Start the application
