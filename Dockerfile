@@ -1,6 +1,9 @@
 # Use the official Node.js image
 FROM node:20
 
+
+RUN npm config set unsafe-perm true
+
 # Set the working directory
 WORKDIR /app
 
