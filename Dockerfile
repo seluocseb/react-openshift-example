@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 3000
 
 RUN chown -R node /app/build && \
- chown -R node /app/node_modules/.cache
+ chown -R node /app/node_modules
 
 USER node:0
 
