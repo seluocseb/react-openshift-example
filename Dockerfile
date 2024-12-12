@@ -17,16 +17,15 @@ RUN npm run build
 
 FROM node:20 as runtime
 
+WORKDIR /app
+
 COPY --from=build /app/build /app
 COPY --from=build /app/node_modules /app
+COPY --from=package.json /app
 
 # Expose the port the app runs on
 EXPOSE 3000
 
-RUN chown -R node /app/build && \
- chown -R node /app/node_modules
-
-USER node:0
 
 # Start the application
 CMD ["npm", "start"]
