@@ -1,5 +1,5 @@
 # Use the official Node.js image
-FROM node:20 as build
+FROM node:20 as runtime
 
 # Set the working directory
 WORKDIR /app
@@ -14,14 +14,6 @@ RUN npm install --unsafe-perm=true
 COPY . .
 
 RUN npm run build
-
-FROM node:20 as runtime
-
-WORKDIR /app
-
-COPY --from=build /app/build /app
-COPY --from=build /app/node_modules /app
-COPY --from=build /app/package.json /app
 
 # Expose the port the app runs on
 EXPOSE 3000
