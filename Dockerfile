@@ -13,7 +13,7 @@ RUN npm install --unsafe-perm=true
 # Copy the rest of the application code
 COPY . .
 
-RUN npm build
+RUN npm run build
 
 FROM node:20 as runtime
 
